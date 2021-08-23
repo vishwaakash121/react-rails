@@ -10,7 +10,6 @@ module Api
       end
 
       def show
-        byebug
         airline = Airline.find_by_slug(params[:slug])
 
         render json: AirlineSerializer.new(airline).serializable_hash.to_json
@@ -37,7 +36,6 @@ module Api
       end
 
       def destroy
-        byebug
         airline = Airline.find_by_slug(params[:slug])
 
         if airline.destroy
